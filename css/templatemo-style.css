@@ -544,14 +544,14 @@ header .social-icon li a
 	{
 		height: 50px;
 	}
-#detail input[type="submit"]
+#detail button
 	{
 		background:#047E6B;
 		font-weight: bold;
 		-webkit-transition: all 0.4s ease-in-out;
 		        transition: all 0.4s ease-in-out;
 	}
-#detail input[type="submit"]:hover
+#detail button:hover
 	{
 		background: #28a7e9;
 	}

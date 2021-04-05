@@ -509,7 +509,7 @@
     					<h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">CONTACT <span style="color:#015743;">AWESOME</span></h2>
     				</div>
     				<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.9s">
-    					<form action="#" id="query-form" method="post" >
+    					<form action="#" id="query-form" method="get" >
     						<label>NAME</label>
     						<input name="fullname" type="text" class="form-control" id="fullname">
    						  	
@@ -519,7 +519,7 @@
                             <label>MESSAGE</label>
     						<textarea name="message" rows="4" class="form-control" id="message"></textarea>
     						
-                            <input type="submit" class="form-control">
+                            <button class="form-control" onclick=submitfunc()>Submit</button>
     					</form>
     				</div>
     				<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInRight" data-wow-offset="50" data-wow-delay="0.6s">
@@ -561,33 +561,31 @@
 <script type="text/javascript">
 
 	function emptyform() {
-		document.getElementById('fullname').value = "";
-		document.getElementById('email').value = "";
-		document.getElementById('#message').value = "";
+		document.getElementById('fullname').value = null;
+		document.getElementById('email').value = null;
+		document.getElementById('message').value = null;
 	}
 
-	$(document).on('submit', '#query-form', function () {
+	function submitfunc () {
 		var name = document.getElementById('fullname').value;
 		var email = document.getElementById('email').value;
-		var message = document.getElementById('#message').value;
-
-		console.log(name, email, message);
+		var message = document.getElementById('message').value;
 
 		if (name == "") {
 			emptyform();
-			alert("Fill all details in form")
+			alert("Fill all the details in form")
 		} else if (email == "") {
 			emptyform();
-			alert("Fill all details in form")
+			alert("Fill all the details in form")
 		} else if (message == "") {
 			emptyform();
-			alert("Fill all details in form")
+			alert("Fill all the details in form")
 		} else {
 			sendEmail(name, message, email);
 			emptyform();
+			alert("We have recieved your query. Thanks for reaching out to us");
 		}
-		return false;
-	});
+	};
 	
 
 </script>
